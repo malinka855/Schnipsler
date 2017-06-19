@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-xs-12">
+      <strong>Titel:</strong>
+    </div>
+    <div class="col-md-10 col-xs-12">
+      <%= @schnipsel.titel %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-xs-12">
+      <strong>Code:</strong>
+    </div>
+    <div class="col-md-10 col-xs-12">
+      <%= @schnipsel.code %>
+    </div>
+  </div>
+</div>
+
+
+
+<%= link_to 'Edit', edit_schnipsel_path(@schnipsel),{class: 'btn btn-default',role: 'button'} %> |
+<%= link_to 'Back', schnipsels_path,{class: 'btn btn-default',role: 'button'} %>

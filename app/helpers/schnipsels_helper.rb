@@ -1,0 +1,2 @@
+module SchnipselsHelper
+end

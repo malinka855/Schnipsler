@@ -1,0 +1,2 @@
+class Schnipsel < ApplicationRecord
+end

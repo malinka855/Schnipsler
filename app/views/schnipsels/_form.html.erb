@@ -1,0 +1,27 @@
+<%= form_with(model: schnipsel, local: true) do |form| %>
+  <% if schnipsel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(schnipsel.errors.count, "error") %> prohibited this schnipsel from being saved:</h2>
+
+      <ul>
+      <% schnipsel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titel %>
+    <%= form.text_field :titel, id: :schnipsel_titel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_area :code, id: :schnipsel_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
