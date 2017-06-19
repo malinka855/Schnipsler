@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<script>hljs.initHighlightingOnLoad();</script>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2 col-xs-12">
@@ -10,16 +11,15 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2 col-xs-12">
+    <div class="col-md-12 col-xs-12">
       <strong>Code:</strong>
     </div>
-    <div class="col-md-10 col-xs-12">
-      <%= @schnipsel.code %>
+    <div class="col-md-12 col-xs-12">
+      <!-- TODO: lang-ruby ist ein Platzhalter: Hier muss aus dem Datenmodel ausgelesen werden -->
+      <pre><code class="html lang-ruby"><%= @schnipsel.code %></code></pre>
     </div>
   </div>
 </div>
 
-
-
-<%= link_to 'Edit', edit_schnipsel_path(@schnipsel),{class: 'btn btn-default',role: 'button'} %> |
-<%= link_to 'Back', schnipsels_path,{class: 'btn btn-default',role: 'button'} %>
+<%= link_to 'Edit', edit_schnipsel_path(@schnipsel), {class: 'btn btn-default', role: 'button'} %> |
+<%= link_to 'Back', schnipsels_path, {class: 'btn btn-default', role: 'button'} %>
