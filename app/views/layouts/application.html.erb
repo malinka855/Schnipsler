@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schnipsler</title>
     <%= csrf_meta_tags %>
 
@@ -26,6 +27,11 @@
   </head>
 
   <body>
-    <%= yield %>
+  <header>
+    <%= render 'layouts/navigation/navigation' %>
+  </header>
+  <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   </body>
 </html>
