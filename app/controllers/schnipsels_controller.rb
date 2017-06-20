@@ -1,21 +1,22 @@
 class SchnipselsController < ApplicationController
-  before_action :set_schnipsel, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :set_schnipsel, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show]
 
   # GET /schnipsels
   # GET /schnipsels.json
   def index
-    @schnipsels = Schnipsel.all
+    @schnipsels = current_user.schnipsels.all
   end
 
   # GET /schnipsels/1
   # GET /schnipsels/1.json
   def show
+    @schnipsel = Schnipsel.find(params[:id])
   end
 
   # GET /schnipsels/new
   def new
-    @schnipsel = Schnipsel.new
+    @schnipsel = current_user.schnipsels.build
   end
 
   # GET /schnipsels/1/edit
@@ -25,7 +26,7 @@ class SchnipselsController < ApplicationController
   # POST /schnipsels
   # POST /schnipsels.json
   def create
-    @schnipsel = Schnipsel.new(schnipsel_params)
+    @schnipsel = current_user.schnipsels.new(schnipsel_params)
 
     respond_to do |format|
       if @schnipsel.save
@@ -65,7 +66,7 @@ class SchnipselsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_schnipsel
-      @schnipsel = Schnipsel.find(params[:id])
+      @schnipsel = current_user.schnipsels.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

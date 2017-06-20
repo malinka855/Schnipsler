@@ -19,5 +19,7 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_schnipsel_path(@schnipsel), {class: 'btn btn-default', role: 'button'} %> |
+<% if current_user.schnipsels.include? @schnipsel %>
+    <%= link_to 'Edit', edit_schnipsel_path(@schnipsel), {class: 'btn btn-default', role: 'button'} %> |
+<% end %>
 <%= link_to 'Back', schnipsels_path, {class: 'btn btn-default', role: 'button'} %>

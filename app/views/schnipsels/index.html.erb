@@ -1,26 +1,21 @@
-<div class="panel panel-default">
-  <div class="panel-body">
+<table class="table table-striped table-hover table-responsive">
+  <thead>
+  <tr>
+    <th>Titel</th>
+    <th>Code</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
 
-    <table class="table table-striped table-hover table-responsive">
-      <thead>
+  <tbody>
+  <% @schnipsels.each do |schnipsel| %>
       <tr>
-        <th>Titel</th>
-        <th>Code</th>
-        <th colspan="3"></th>
+        <td><%= schnipsel.titel %></td>
+        <td><%= schnipsel.code %></td>
+        <td><%= link_to 'Show', schnipsel, {class: 'btn btn-default', role: 'button'} %></td>
+        <td><%= link_to 'Edit', edit_schnipsel_path(schnipsel), {class: 'btn btn-default', role: 'button'} %></td>
+        <td><%= link_to 'Destroy', schnipsel, method: :delete, data: {confirm: 'Are you really really sure?'}, class: 'btn btn-default', role: 'button' %></td>
       </tr>
-      </thead>
-
-      <tbody>
-      <% @schnipsels.each do |schnipsel| %>
-          <tr>
-            <td><%= schnipsel.titel %></td>
-            <td><%= schnipsel.code %></td>
-            <td><%= link_to 'Show', schnipsel,{class: 'btn btn-default',role: 'button'} %></td>
-            <td><%= link_to 'Edit', edit_schnipsel_path(schnipsel),{class: 'btn btn-default',role: 'button'} %></td>
-            <td><%= link_to 'Destroy', schnipsel, method: :delete, data: {confirm: 'Are you really really sure?'},class: 'btn btn-default',role: 'button' %></td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+  <% end %>
+  </tbody>
+</table>
