@@ -1,3 +1,4 @@
+
 <%= form_with(model: schnipsel, local: true) do |form| %>
     <% if schnipsel.errors.any? %>
         <div id="error_explanation">
@@ -11,22 +12,23 @@
         </div>
     <% end %>
 
-    <div class="field">
+    <div class="form-group">
       <%= form.label :titel %>
-      <%= form.text_field :titel, id: :schnipsel_titel %>
+      <%= form.text_field :titel, id: :schnipsel_titel, class: 'form-control' %>
+      <small class="form-text text-muted">Bitte geben Sie hier den Titel des Codeschnipsels ein!</small>
     </div>
 
-    <div class="field">
-      <%= form.label :code %>
-      <%= form.text_area :code, id: :schnipsel_code %>
+    <div class="form-group">
+      <%= form.label :code%>
+      <%= form.text_area :code, id: :schnipsel_code, class: 'form-control codeSchnipsel' %>
+      <small class="form-text text-muted">Bitte geben Sie hier den Codeschnipsel ein!</small>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= form.label :tag_list %>
-      <%= form.text_field :tag_list, value: form.object.tag_list.to_s %>
+      <%= form.text_field :tag_list, value: form.object.tag_list.to_s, class: 'form-control'%>
+      <small class="form-text text-muted">Bitte geben Sie hier Ihre Tags ein. Sehr wichtig: Die Tags müssen durch ein Komma "," getrennt werden!</small>
     </div>
 
-    <div class="actions">
-      <%= form.submit %>
-    </div>
+      <%= form.submit 'Schnipsel dir einen!',class: 'btn btn-default', role: 'button'%>
 <% end %>
