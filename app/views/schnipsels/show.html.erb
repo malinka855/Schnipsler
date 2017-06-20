@@ -17,9 +17,20 @@
       <pre><code class="html lang-ruby"><%= @schnipsel.code %></code></pre>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12 col-xs-12">
+      <strong>Tags</strong>
+    </div>
+    <div class="col-md-12 col-xs-12">
+      <!-- TODO: lang-ruby ist ein Platzhalter: Hier muss aus dem Datenmodel ausgelesen werden -->
+      <% for tag in @schnipsel.tag_list %>
+      <%= tag %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<% if current_user.schnipsels.include? @schnipsel %>
+<% if not current_user.nil? and current_user.schnipsels.include? @schnipsel %>
     <%= link_to 'Edit', edit_schnipsel_path(@schnipsel), {class: 'btn btn-default', role: 'button'} %> |
 <% end %>
 <%= link_to 'Back', schnipsels_path, {class: 'btn btn-default', role: 'button'} %>

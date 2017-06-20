@@ -1,6 +1,8 @@
-<form class="navbar-form navbar-left" role="search">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="tags">
-  </div>
-  <button type="submit" class="btn btn-default">Suche</button>
-</form>
+<%= form_tag ("/home/search"), :method => "get" do %>
+    <div class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <%= text_field_tag :tag_list, params[:tag_list] %>
+        <%= submit_tag "Suche" %>
+      </div>
+    </div>
+<% end %>

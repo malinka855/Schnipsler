@@ -71,6 +71,6 @@ class SchnipselsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schnipsel_params
-      params.require(:schnipsel).permit(:titel, :code)
+      params.require(:schnipsel).permit(:titel, :code, :tag_list)
     end
 end
