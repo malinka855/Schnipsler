@@ -22,9 +22,8 @@
       <strong>Tags</strong>
     </div>
     <div class="col-md-12 col-xs-12">
-      <!-- TODO: lang-ruby ist ein Platzhalter: Hier muss aus dem Datenmodel ausgelesen werden -->
       <% for tag in @schnipsel.tag_list %>
-      <%= tag %>
+          <%= link_to tag, {:controller => "home" ,:action => :search, :tag_list => tag}, :class => 'tag2' %>
       <% end %>
     </div>
   </div>

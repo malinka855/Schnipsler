@@ -1,27 +1,12 @@
-<div class="page-header">
-  <h1>Schnipsler
-    <small> Code einfach teilen</small>
-  </h1>
+<div class="row">
+  <div class="col-md-10">
+
+    <%= render 'schnipsels/liste' %>
+  </div>
+  <div class="col-md-2">
+    <h3>Tags</h3>
+    <% tag_cloud(@tags, %w(tag1 tag2 tag3 tag4)) do |tag, css_class| %>
+        <%= link_to tag.name, {:action => :search, :tag_list => tag.name}, :class => css_class %>
+    <% end %>
+  </div>
 </div>
-
-<table class="table table-striped table-hover table-responsive">
-  <thead>
-  <tr>
-    <th>Benutzer</th>
-    <th>Titel</th>
-    <th>Code</th>
-    <th></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @schnipsels.each do |schnipsel| %>
-      <tr>
-        <td><%= schnipsel.user.username %></td>
-        <td><%= schnipsel.titel %></td>
-        <td><%= schnipsel.code %></td>
-        <td><%= link_to 'Show', schnipsel, {class: 'btn btn-default', role: 'button'} %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>

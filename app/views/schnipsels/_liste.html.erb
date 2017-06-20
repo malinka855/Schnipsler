@@ -1,0 +1,35 @@
+<table class="table table-striped table-hover table-responsive">
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Titel</th>
+    <th>Tags</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @schnipsels.each do |schnipsel| %>
+      <tr>
+        <td><%= schnipsel.user.username %></td>
+        <td><%= schnipsel.titel %></td>
+        <td>
+          <% for tag in schnipsel.tag_list %>
+              <%= link_to tag, {:controller => "home" ,:action => :search, :tag_list => tag}, :class => 'tag1' %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', schnipsel, {class: 'btn btn-default', role: 'button'} %></td>
+        <td>
+          <% if not current_user.nil? and current_user.schnipsels.include? schnipsel %>
+              <%= link_to 'Edit', edit_schnipsel_path(schnipsel), {class: 'btn btn-default', role: 'button'} %>
+          <% end %>
+        </td>
+        <td>
+          <% if not current_user.nil? and current_user.schnipsels.include? schnipsel %>
+              <%= link_to 'Destroy', schnipsel, method: :delete, data: {confirm: 'Are you really really sure?'}, class: 'btn btn-default', role: 'button' %>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
