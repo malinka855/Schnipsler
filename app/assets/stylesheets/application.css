@@ -13,5 +13,12 @@
  *= require_tree .
  *= require_self
  */
+/*
+*= require codemirror
+*/
+/*
+*= require codemirror/themes/dracula
+
+*/
 
 body { padding-top: 70px; }

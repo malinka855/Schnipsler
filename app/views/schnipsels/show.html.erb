@@ -1,4 +1,3 @@
-<script>hljs.initHighlightingOnLoad();</script>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2 col-xs-12">
@@ -14,7 +13,18 @@
     </div>
     <div class="col-md-12 col-xs-12">
       <!-- TODO: lang-ruby ist ein Platzhalter: Hier muss aus dem Datenmodel ausgelesen werden -->
-      <pre><code class="html lang-ruby"><%= @schnipsel.code %></code></pre>
+      <textarea id="schnipsel_code" readonly><%= @schnipsel.code %></textarea>
+      <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('schnipsel_code'), {
+          lineNumbers: true,
+          mode: "text/x-ruby",
+          matchBrackets: true,
+          theme: 'dracula',
+          indentUnit: 2,
+          autoCloseTags: true,
+          readOnly: true
+        });
+      </script>
     </div>
   </div>
   <div class="row">

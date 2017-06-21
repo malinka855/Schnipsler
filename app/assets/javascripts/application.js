@@ -12,3 +12,22 @@
 //
 //= require rails-ujs
 //= require_tree .
+//= require codemirror
+//= require codemirror/modes/ruby
+
+//= require codemirror/addons/edit/closebrackets
+//= require codemirror/addons/edit/closetag
+//= require codemirror/addons/edit/matchtags
+//= require codemirror/addons/edit/matchbrackets
+//= require codemirror/addons/edit/trailingspace
+//= require codemirror/addons/edit/continuelist
+
+
+//= require codemirror/addons/fold/brace-fold
+//= require codemirror/addons/fold/comment-fold
+//= require codemirror/addons/fold/foldcode
+//= require codemirror/addons/fold/foldgutter
+//= require codemirror/addons/fold/indent-fold
+//= require codemirror/addons/fold/markdown-fold
+//= require codemirror/addons/fold/xml-fold
+

@@ -1,5 +1,5 @@
 
-<%= form_with(model: schnipsel, local: true) do |form| %>
+<%= form_with(model: schnipsel, local: true, html: {style: 'margin: 15px'}) do |form| %>
     <% if schnipsel.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(schnipsel.errors.count, "error") %> prohibited this schnipsel from being saved:</h2>
@@ -20,7 +20,19 @@
 
     <div class="form-group">
       <%= form.label :code%>
-      <%= form.text_area :code, id: :schnipsel_code, class: 'form-control codeSchnipsel' %>
+
+      <%= form.text_area :code, id: :schnipsel_code, class: 'editor form-control codeSchnipsel' %>
+      <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('schnipsel_code'), {
+          lineNumbers: true,
+          mode: "text/x-ruby",
+          matchBrackets: true,
+          theme: 'dracula',
+          autoCloseTags: true,
+          scanUp: true,
+          indentUnit: 2
+        });
+      </script>
       <small class="form-text text-muted">Bitte geben Sie hier den Codeschnipsel ein!</small>
     </div>
 
