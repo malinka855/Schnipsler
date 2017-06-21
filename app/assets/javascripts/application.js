@@ -14,6 +14,10 @@
 //= require_tree .
 //= require codemirror
 //= require codemirror/modes/ruby
+//= require codemirror/modes/htmlmixed
+//= require codemirror/modes/htmlembedded
+//= require codemirror/modes/css
+//= require codemirror/modes/xml
 
 //= require codemirror/addons/edit/closebrackets
 //= require codemirror/addons/edit/closetag
@@ -22,12 +26,18 @@
 //= require codemirror/addons/edit/trailingspace
 //= require codemirror/addons/edit/continuelist
 
-
-//= require codemirror/addons/fold/brace-fold
-//= require codemirror/addons/fold/comment-fold
 //= require codemirror/addons/fold/foldcode
 //= require codemirror/addons/fold/foldgutter
-//= require codemirror/addons/fold/indent-fold
-//= require codemirror/addons/fold/markdown-fold
 //= require codemirror/addons/fold/xml-fold
+//= require codemirror/addons/fold/brace-fold
+//= require codemirror/addons/fold/markdown-fold
+//= require codemirror/addons/fold/indent-fold
+//= require codemirror/addons/fold/comment-fold
 
+//= require codemirror/addons/dialog/dialog
+//= require codemirror/addons/scroll/annotatescrollbar
+//= require codemirror/addons/search/search
+//= require codemirror/addons/search/jump-to-line
+//= require codemirror/addons/search/match-highlighter
+//= require codemirror/addons/search/matchesonscrollbar
+//= require codemirror/addons/search/searchcursor

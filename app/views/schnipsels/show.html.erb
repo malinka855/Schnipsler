@@ -15,15 +15,7 @@
       <!-- TODO: lang-ruby ist ein Platzhalter: Hier muss aus dem Datenmodel ausgelesen werden -->
       <textarea id="schnipsel_code" readonly><%= @schnipsel.code %></textarea>
       <script>
-        var editor = CodeMirror.fromTextArea(document.getElementById('schnipsel_code'), {
-          lineNumbers: true,
-          mode: "text/x-ruby",
-          matchBrackets: true,
-          theme: 'dracula',
-          indentUnit: 2,
-          autoCloseTags: true,
-          readOnly: true
-        });
+        var editor = configure_editor("schnipsel_code", true, "text/html");
       </script>
     </div>
   </div>

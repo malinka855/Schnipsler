@@ -23,15 +23,7 @@
 
       <%= form.text_area :code, id: :schnipsel_code, class: 'editor form-control codeSchnipsel' %>
       <script>
-        var editor = CodeMirror.fromTextArea(document.getElementById('schnipsel_code'), {
-          lineNumbers: true,
-          mode: "text/x-ruby",
-          matchBrackets: true,
-          theme: 'dracula',
-          autoCloseTags: true,
-          scanUp: true,
-          indentUnit: 2
-        });
+        var editor = configure_editor("schnipsel_code", false, "text/x-ruby");
       </script>
       <small class="form-text text-muted">Bitte geben Sie hier den Codeschnipsel ein!</small>
     </div>
