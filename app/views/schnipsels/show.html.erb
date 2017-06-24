@@ -1,10 +1,16 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-2 col-xs-12">
+    <div class="col-md-1 col-xs-12">
       <strong>Titel:</strong>
     </div>
-    <div class="col-md-10 col-xs-12">
+    <div class="col-md-9 col-xs-12">
       <%= @schnipsel.titel %>
+    </div>
+    <div class="col-md-1 col-xs-12" style="text-align: right">
+      <strong>MIME-Type:</strong>
+    </div>
+    <div class="col-md-1 col-xs-12" style="text-align: right">
+      <%= @schnipsel.syntax %>
     </div>
   </div>
   <div class="row">
@@ -12,10 +18,9 @@
       <strong>Code:</strong>
     </div>
     <div class="col-md-12 col-xs-12">
-      <!-- TODO: lang-ruby ist ein Platzhalter: Hier muss aus dem Datenmodel ausgelesen werden -->
       <textarea id="schnipsel_code" readonly><%= @schnipsel.code %></textarea>
       <script>
-        var editor = configure_editor("schnipsel_code", true, "text/html");
+        var editor = configure_editor("schnipsel_code", true, '<%=@schnipsel.syntax%>');
       </script>
     </div>
   </div>

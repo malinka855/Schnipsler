@@ -1,5 +1,6 @@
 class SchnipselsController < ApplicationController
   before_action :set_schnipsel, only: [:edit, :update, :destroy]
+  before_action :define_syntax, only: [:edit, :new]
   before_action :authenticate_user!, :except => [:show]
 
   # GET /schnipsels
@@ -30,11 +31,11 @@ class SchnipselsController < ApplicationController
 
     respond_to do |format|
       if @schnipsel.save
-        format.html { redirect_to @schnipsel, notice: 'Schnipsel was successfully created.' }
-        format.json { render :show, status: :created, location: @schnipsel }
+        format.html {redirect_to @schnipsel, notice: 'Schnipsel was successfully created.'}
+        format.json {render :show, status: :created, location: @schnipsel}
       else
-        format.html { render :new }
-        format.json { render json: @schnipsel.errors, status: :unprocessable_entity }
+        format.html {render :new}
+        format.json {render json: @schnipsel.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -44,11 +45,11 @@ class SchnipselsController < ApplicationController
   def update
     respond_to do |format|
       if @schnipsel.update(schnipsel_params)
-        format.html { redirect_to @schnipsel, notice: 'Schnipsel was successfully updated.' }
-        format.json { render :show, status: :ok, location: @schnipsel }
+        format.html {redirect_to @schnipsel, notice: 'Schnipsel was successfully updated.'}
+        format.json {render :show, status: :ok, location: @schnipsel}
       else
-        format.html { render :edit }
-        format.json { render json: @schnipsel.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @schnipsel.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -58,19 +59,29 @@ class SchnipselsController < ApplicationController
   def destroy
     @schnipsel.destroy
     respond_to do |format|
-      format.html { redirect_to schnipsels_url, notice: 'Schnipsel was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {redirect_to schnipsels_url, notice: 'Schnipsel was successfully destroyed.'}
+      format.json {head :no_content}
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_schnipsel
-      @schnipsel = current_user.schnipsels.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_schnipsel
+    @schnipsel = current_user.schnipsels.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def schnipsel_params
-      params.require(:schnipsel).permit(:titel, :code, :tag_list)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def schnipsel_params
+    params.require(:schnipsel).permit(:titel, :code, :tag_list, :syntax)
+  end
+
+  def define_syntax
+    @syntax_definitions = [%w(ruby text/x-ruby),
+                           %w(html text/html),
+                           %w(scss text/x-scss),
+                           %w(less text/x-less),
+                           %w(xml text/xml),
+    ]
+  end
+
 end

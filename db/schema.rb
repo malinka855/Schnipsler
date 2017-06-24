@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620120117) do
+ActiveRecord::Schema.define(version: 20170624085122) do
 
   create_table "schnipsels", force: :cascade do |t|
     t.string "titel"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170620120117) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "syntax"
     t.index ["user_id"], name: "index_schnipsels_on_user_id"
   end
 
