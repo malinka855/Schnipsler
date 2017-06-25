@@ -76,12 +76,39 @@ class SchnipselsController < ApplicationController
   end
 
   def define_syntax
-    @syntax_definitions = [%w(ruby text/x-ruby),
-                           %w(html text/html),
-                           %w(scss text/x-scss),
-                           %w(less text/x-less),
-                           %w(xml text/xml),
+    @syntax_definitions = [%w(Ruby text/x-ruby),
+                           %w(HTML text/html),
+                           %w(JavaScript text/javascript),
+                           %w(Typescript text/typescript),
+                           %w(CoffeScript text/x-coffeescript),
+                           %w(JSON text/json),
+                           %w(ReactJS text/jsx),
+                           %w(Java text/x-java),
+                           %w(CSS text/x-css),
+                           %w(SCSS text/x-scss),
+                           %w(LESS text/x-less),
+                           %w(XML text/xml),
+                           %w(C text/x-csrc),
+                           %w(C++ text/x-c++src),
+                           %w(C# text/x-csharp),
+                           %w(Objective-C text/x-objectivec),
+                           %w(Swift text/x-swift),
+                           %w(Scala text/x-scala),
+                           %w(Diff text/x-diff),
+                           %w(Gherkin text/x-feature),
+                           %w(Go text/x-go),
+                           %w(Markdown text/x-markdown),
+                           %w(Perl text/x-perl),
+                           %w(PHP text/x-php),
+                           %w(Powershell application/x-powershell),
+                           %w(Shell application/x-sh),
+                           %w(Python text/x-python),
+                           %w(SQL text/x-sql),
+                           %w(PLSQL text/x-plsql),
     ]
+
+
+
   end
 
 end

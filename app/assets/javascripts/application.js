@@ -18,6 +18,21 @@
 //= require codemirror/modes/htmlembedded
 //= require codemirror/modes/css
 //= require codemirror/modes/xml
+//= require codemirror/modes/clike
+//= require codemirror/modes/coffeescript
+//= require codemirror/modes/gherkin
+//= require codemirror/modes/go
+//= require codemirror/modes/javascript
+//= require codemirror/modes/jsx
+//= require codemirror/modes/markdown
+//= require codemirror/modes/perl
+//= require codemirror/modes/php
+//= require codemirror/modes/powershell
+//= require codemirror/modes/shell
+//= require codemirror/modes/python
+//= require codemirror/modes/sql
+//= require codemirror/modes/diff
+//= require codemirror/modes/swift
 
 //= require codemirror/addons/edit/closebrackets
 //= require codemirror/addons/edit/closetag
